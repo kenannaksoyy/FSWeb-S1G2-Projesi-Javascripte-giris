@@ -41,18 +41,11 @@ Aşağıdakileri yapınız:
    4. 1. değeri Console'a yazdırın
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-function karsilastirma(birinciDeger,ikinciDegeri){
-  let karsilastirma_sonuc;
-  if(birinciDeger===ikinciDegeri){
-    karsilastirma_sonuc="Eşitler";
+function karsilastirma(birinciDeger,ikinciDeger){
+  if(birinciDeger<ikinciDeger){
+    birinciDeger=1000;
   }
-  else if(birinciDeger>ikinciDegeri){
-    karsilastirma_sonuc="Birinci Deger Buyuk";
-  }
-  else{
-    karsilastirma_sonuc="İkinci Değer Buyuk";
-  }
-  return karsilastirma_sonuc;
+  return birinciDeger;
 }
 console.log(karsilastirma(20,30));
 
