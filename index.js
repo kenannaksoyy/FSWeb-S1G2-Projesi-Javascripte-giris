@@ -271,7 +271,7 @@ function sesliHarfSayaci(gelen_str) {
   return sayac;
 }
 console.log(sesliHarfSayaci("Alikİİükkssssoü"));
-sr="adda";
+
 
 
 
