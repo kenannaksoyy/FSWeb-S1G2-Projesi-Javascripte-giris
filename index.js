@@ -259,6 +259,7 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 
 function sesliHarfSayaci(gelen_str) {
   let sesli_harflar="aeıioöuü";
+  gelen_str = gelen_str.toLowerCase();
   let sayac=0;
   for (let i=0;i<gelen_str.length;i++){
     for (let j=0;j<sesli_harflar.length;j++){
@@ -269,7 +270,8 @@ function sesliHarfSayaci(gelen_str) {
   }
   return sayac;
 }
-console.log(sesliHarfSayaci("alikkkssssoü"));
+console.log(sesliHarfSayaci("Alikİİükkssssoü"));
+sr="adda";
 
 
 
