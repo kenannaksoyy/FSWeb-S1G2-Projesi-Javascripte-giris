@@ -20,10 +20,10 @@ Aşağıdakileri yapın:
 function ehliyetYasi(yas){
   let kontrol;
   if(yas<=18){
-      kontrol=true;
+      kontrol=false;
   }
   else{
-    kontrol=false;
+    kontrol=true;
   }
 
   return kontrol;
