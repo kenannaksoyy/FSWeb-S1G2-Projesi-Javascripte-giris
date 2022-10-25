@@ -22,6 +22,7 @@ Aşağıdakileri yapın:
 
 
 
+
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
 
@@ -61,9 +62,10 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a,b){
+  return a*b;
 }
+console.log(carpma(5,4));
 
 
 
@@ -77,9 +79,10 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(yil){
+  return 7*yil;
 }
+console.log(kopeginYasi(5));
 
 
 
@@ -105,8 +108,44 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+  let oyun_sonuc;
+  let t="Taş";
+  let k="Kağıt";
+  let m="Makas";
+  console.log(oyuncu);
+  console.log(bilgisayar);
+if(oyuncu===bilgisayar){
+  oyun_sonuc="Beraberlik";
 }
+else if((oyuncu===t && bilgisayar===m) || (oyuncu===k && bilgisayar===t) || (oyuncu===m && bilgisayar==k) ){
+  oyun_sonuc="Kazandın!";
+}
+else{
+  oyun_sonuc="Kaybettin!";
+}
+return oyun_sonuc;
+}
+
+function oyun_hamle(oyuncu){
+  let bilgisayar_rand = Math.random() * 1;
+  let bilgisayar;
+  if(bilgisayar_rand<0.30){
+    bilgisayar="Taş";
+  }
+  else if (bilgisayar_rand>=0.30 && bilgisayar_rand<0.70){
+    bilgisayar="Kağıt";
+  }
+  else{
+    bilgisayar="Makas"
+  }
+  return oyun(oyuncu,bilgisayar)
+}
+console.log(oyun_hamle("Taş"));
+
+
+
+
+
 
 
 
@@ -120,9 +159,10 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(km){
+  return km * 0.621371;
 }
+console.log(milDonusturucu(1))
 
 
 
@@ -134,9 +174,10 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cm){
+ return cm / 30.48
 }
+console.log(feetDonusturucu(10))
 
 
 
@@ -153,10 +194,15 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(sayi){
+      let sarkı=" küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!"
+      return sayi + sarkı;
 }
-
+let sayi=5;
+while(sayi>0){
+  console.log(cocukSarkisi(sayi));
+  sayi--;
+}
 
 /* Görev 6 : Not Hesaplayıcı */
 
@@ -173,9 +219,29 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(not){
+  let sonuc;
+if(not>=90 && not<=100){
+sonuc='A aldın';
 }
+else if(not>=80 && not<90){
+ sonuc='B aldın'; 
+}
+else if(not>=70 && not<80){
+  sonuc='C aldın'; 
+ }
+ else if(not>=60 && not<70){
+  sonuc='D aldın'; 
+ }
+ else if(not<60){
+  sonuc='F aldın'; 
+ }
+ else{
+  return "Dogry Gir";
+ }
+ return sonuc;
+}
+console.log(notHesapla(80));
 
 
 
@@ -191,9 +257,19 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(gelen_str) {
+  let sesli_harflar="aeıioöuü";
+  let sayac=0;
+  for (let i=0;i<gelen_str.length;i++){
+    for (let j=0;j<sesli_harflar.length;j++){
+      if(gelen_str[i]===sesli_harflar[j]){
+        sayac++;
+      }
+    }
+  }
+  return sayac;
 }
+console.log(sesliHarfSayaci("alikkkssssoü"));
 
 
 
@@ -203,6 +279,8 @@ function sa(){
   return 'as';
 }
 sa();
+
+
 /* Bu satırdan sonrasını değiştirmeyin */
 module.exports = {
   sa,
