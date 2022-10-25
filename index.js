@@ -12,43 +12,66 @@ Bunu sağlamak için cevabı direk console'a loglayın veya çağırdığınız 
 
 /*
 Görev 1a - Ehliyet Yaşı (puanlamaya dahil değildir)
-
 Aşağıdakileri yapın:   
    1. surucuYasi diye bir değişken yaratın ve bir sayı atayın.
    2. Eğer yaş 18'den büyük ise Console'da True, değilse False değeri yazdırın.
-
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
+function ehliyetYasi(yas){
+  let kontrol;
+  if(yas<=18){
+      kontrol=true;
+  }
+  else{
+    kontrol=false;
+  }
 
+  return kontrol;
+}
+console.log( ehliyetYasi(15));
 
 
 
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
-
 Aşağıdakileri yapınız:   
    1. 2 değişken oluşturun ve bunlara değerler atayın (isimlendirme olarak birinciDeger ikinciDegeri kullanabilirsin)
    2. 1. değeri 2. değer ile karşılaştıran bir koşul oluşturun
    3. 2. adımdaki koşul doğru olduğunda 1. değeri değiştirin
    4. 1. değeri Console'a yazdırın
-
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
+function karsilastirma(birinciDeger,ikinciDegeri){
+  let karsilastirma_sonuc;
+  if(birinciDeger===ikinciDegeri){
+    karsilastirma_sonuc="Eşitler";
+  }
+  else if(birinciDeger>ikinciDegeri){
+    karsilastirma_sonuc="Birinci Deger Buyuk";
+  }
+  else{
+    karsilastirma_sonuc="İkinci Değer Buyuk";
+  }
+  return karsilastirma_sonuc;
+}
+console.log(karsilastirma(20,30));
 
 
 
 
 /*
 Görev 1c - String bir değeri Number'a dönüştürün (puanlamaya dahil değildir)
-
 Aşağıdakileri yapın:   
    1. String türünde ve değeri "1999" olan bir değişken oluşturun
    2. Değeri "1999" olan bu String'i değeri 1999 olan bir integer'a dönüştürün
    3. Sonucu Console'a yazdırın
-
    İPUCU: Number metoduna bakabilirsin
 */
+function int_donustur(gelen_str){
+  let gelen_int=parseInt(gelen_str);
+  return gelen_int;
+}
+console.log(int_donustur("1999"));
 
 
 
@@ -94,7 +117,6 @@ Aşağıdakileri yapın:
 1. Bilgisayarın seçimini rastgele oluşturacağımız bir değişken tanımlayın (bu fonksiyon içinde yaratılmalı)
 2. Math.random'ı kullanarak bilgisayarın seçimini oluşturun (Math.random 0-1 arasında bir değer verecek)
 3. Bu rastgele değeri "Taş", "Kağıt" veya "Makas"a dönüştüren bir koşul oluşturun
-
 Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 1. 2 parametre alın: oyuncunun tercihini alan bir string değer: "Taş", "Kağıt" veya "Makas" 
    ve bilgisayarınkini alan: "Taş", "Kağıt" veya "Makas"
@@ -103,7 +125,6 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
  - kazanma durumunda "Kazandın!" dönmeli
  - kaybetme durumunda "Kaybettin!" dönmeli
  - beraberlikte "Beraberlik" dönmeli
-
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
@@ -187,9 +208,7 @@ console.log(feetDonusturucu(10))
 Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 1. Başlangıçta var olan maymun sayısını alın.
 2. cocukSarkisi fonksiyonu aşağıdaki satırı sadece 1 kere yazdırmalı:
-
     "{sayı} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!"
-
 3. Bu fonksiyonun dışında bir yerde, maymun sayısının her seferinde 1 azaldığı ve maymun sayısı 1 olana kadar devem eden bir döngü oluşturun. 
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
@@ -210,7 +229,6 @@ while(sayi>0){
 Aşağdakileri notHesapla fonksiyonunda yapın.
 1. 100'lük sistemde bir sınav sonucu alın.
 2. Aşağıdaki tabloya göre notu dönün.
-
  90-100 arasında 'A aldın' 
  80-89 arasında 'B aldın'
  70-79 arasında 'C aldın'
@@ -251,7 +269,6 @@ console.log(notHesapla(80));
 Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 1. Bir parametre alın, string olsun.
 2. Bu string'in içindeki sesli harfleri sayın ve sayısını geri dönün.  (hem büyük hem de küçük harflerin sayısını dönmeli).
-
 İPUCU - yarın işlenecek array(dizi) konusunu önden araştırman gerekecek. (https://www.w3schools.com/js/js_arrays.asp)
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
